@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -127,7 +127,7 @@ export default function ReportPage() {
         <p style={{ fontSize: 13, color: "#6B7280" }}>AI will validate and categorize your report automatically</p>
       </div>
 
-      <div style={{ maxWidth: 600 }}>
+      <div style={{ width: "100%", maxWidth: 700 }}>
         <div style={{ background: "#111827", border: "1px solid #1F2937", borderRadius: 12, padding: 28 }}>
 
           {/* Category */}

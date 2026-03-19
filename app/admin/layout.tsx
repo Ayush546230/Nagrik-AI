@@ -28,17 +28,27 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 position: "fixed", top: 0, left: 0, bottom: 0, zIndex: 40,
             }} className="desktop-sidebar">
                 <div style={{
-                    fontFamily: "Syne, sans-serif", fontWeight: 800, fontSize: 18,
+                    display: "flex", alignItems: "center", gap: 10,
                     padding: "0 12px 20px", borderBottom: "1px solid #1F2937",
-                    marginBottom: 12, color: "#F9FAFB",
+                    marginBottom: 12,
                 }}>
-                    Nagrik
-                    <span style={{
-                        marginLeft: 8, fontSize: 10, fontWeight: 600,
-                        background: "rgba(6,182,212,0.1)", color: "#06B6D4",
-                        border: "1px solid rgba(6,182,212,0.2)",
-                        padding: "2px 6px", borderRadius: 4,
-                    }}>ADMIN</span>
+                    <div style={{
+                        width: 32, height: 32, borderRadius: 6, overflow: "hidden",
+                        flexShrink: 0, boxShadow: "0 0 15px rgba(6,182,212,0.3)"
+                    }}>
+                        <img src="/logo.png" alt="Logo" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                    </div>
+                    <div style={{ display: "flex", flexDirection: "column" }}>
+                        <span style={{ fontFamily: "Syne, sans-serif", fontWeight: 800, fontSize: 18, color: "#F9FAFB", lineHeight: 1.2 }}>
+                            Nagrik
+                        </span>
+                        <span style={{
+                            fontSize: 9, fontWeight: 700,
+                            background: "rgba(6,182,212,0.1)", color: "#06B6D4",
+                            border: "1px solid rgba(6,182,212,0.2)",
+                            padding: "1px 4px", borderRadius: 3, width: "fit-content"
+                        }}>ADMIN</span>
+                    </div>
                 </div>
 
                 <nav style={{ display: "flex", flexDirection: "column", gap: 4 }}>
@@ -74,18 +84,21 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             {/* ── Mobile Header ── */}
             <div className="mobile-topbar" style={{
                 display: "none",
-                position: "fixed", top: 0, left: 0, right: 0, zIndex: 50,
+                position: "fixed", top: 0, left: 0, right: 0, zIndex: 1100,
                 background: "#111827", borderBottom: "1px solid #1F2937",
                 padding: "12px 16px",
                 alignItems: "center", justifyContent: "space-between",
             }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                    <div style={{ width: 28, height: 28, borderRadius: 6, overflow: "hidden", flexShrink: 0 }}>
+                        <img src="/logo.png" alt="Logo" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                    </div>
                     <span style={{ fontFamily: "Syne, sans-serif", fontWeight: 800, fontSize: 18, color: "#F9FAFB" }}>Nagrik</span>
                     <span style={{
-                        fontSize: 10, fontWeight: 600,
+                        fontSize: 9, fontWeight: 700,
                         background: "rgba(6,182,212,0.1)", color: "#06B6D4",
                         border: "1px solid rgba(6,182,212,0.2)",
-                        padding: "2px 6px", borderRadius: 4,
+                        padding: "1px 4px", borderRadius: 3,
                     }}>ADMIN</span>
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
@@ -101,7 +114,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
             {/* ── Mobile Drawer ── */}
             {menuOpen && (
-                <div style={{ position: "fixed", inset: 0, zIndex: 49 }}>
+                <div style={{ position: "fixed", inset: 0, zIndex: 1200 }}>
                     <div onClick={() => setMenuOpen(false)} style={{
                         position: "absolute", inset: 0, background: "rgba(0,0,0,0.6)",
                     }} />
@@ -110,7 +123,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                         width: 260, background: "#111827",
                         borderRight: "1px solid #1F2937",
                         display: "flex", flexDirection: "column",
-                        padding: "70px 12px 24px", zIndex: 50,
+                        padding: "70px 12px 24px", zIndex: 1201,
                     }}>
                         <nav style={{ display: "flex", flexDirection: "column", gap: 4 }}>
                             {navItems.map((item) => {

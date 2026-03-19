@@ -1,4 +1,4 @@
-﻿import { SignUp } from "@clerk/nextjs";
+import { SignUp } from "@clerk/nextjs";
 
 export default function SignUpPage() {
   return (
@@ -19,9 +19,17 @@ export default function SignUpPage() {
         backgroundSize: "40px 40px",
       }} />
       <div style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 32 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <div style={{ width: 40, height: 40, background: "#06B6D4", borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20 }}>🏙️</div>
-          <span style={{ fontFamily: "Syne, sans-serif", fontWeight: 800, fontSize: 24, color: "#F9FAFB" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+          <div style={{
+            width: 48, height: 48,
+            borderRadius: 12,
+            overflow: "hidden",
+            boxShadow: "0 0 25px rgba(6,182,212,0.4)",
+            flexShrink: 0,
+          }}>
+            <img src="/logo.png" alt="Logo" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          </div>
+          <span style={{ fontFamily: "Syne, sans-serif", fontWeight: 800, fontSize: 28, color: "#F9FAFB" }}>
             Nagrik AI
           </span>
         </div>

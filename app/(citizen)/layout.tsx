@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -31,10 +31,20 @@ export default function CitizenLayout({ children }: { children: React.ReactNode 
                 zIndex: 40,
             }} className="desktop-sidebar">
                 <div style={{
-                    fontFamily: "Syne, sans-serif", fontWeight: 800, fontSize: 18,
+                    display: "flex", alignItems: "center", gap: 10,
                     padding: "0 12px 20px", borderBottom: "1px solid #1F2937",
-                    marginBottom: 12, color: "#F9FAFB",
-                }}>Nagrik</div>
+                    marginBottom: 12,
+                }}>
+                    <div style={{
+                        width: 32, height: 32, borderRadius: 6, overflow: "hidden",
+                        flexShrink: 0, boxShadow: "0 0 15px rgba(6,182,212,0.3)"
+                    }}>
+                        <img src="/logo.png" alt="Logo" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                    </div>
+                    <span style={{ fontFamily: "Syne, sans-serif", fontWeight: 800, fontSize: 18, color: "#F9FAFB" }}>
+                        Nagrik
+                    </span>
+                </div>
 
                 <nav style={{ display: "flex", flexDirection: "column", gap: 4 }}>
                     {navItems.map((item) => {
@@ -69,13 +79,18 @@ export default function CitizenLayout({ children }: { children: React.ReactNode 
             {/* ── Mobile Header ── */}
             <div className="mobile-topbar" style={{
                 display: "none",
-                position: "fixed", top: 0, left: 0, right: 0, zIndex: 50,
+                position: "fixed", top: 0, left: 0, right: 0, zIndex: 1100,
                 background: "#111827", borderBottom: "1px solid #1F2937",
                 padding: "12px 16px",
                 alignItems: "center", justifyContent: "space-between",
             }}>
-                <div style={{ fontFamily: "Syne, sans-serif", fontWeight: 800, fontSize: 18, color: "#F9FAFB" }}>
-                    Nagrik
+                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                    <div style={{ width: 28, height: 28, borderRadius: 6, overflow: "hidden", flexShrink: 0 }}>
+                        <img src="/logo.png" alt="Logo" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                    </div>
+                    <span style={{ fontFamily: "Syne, sans-serif", fontWeight: 800, fontSize: 18, color: "#F9FAFB" }}>
+                        Nagrik
+                    </span>
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                     <UserButton afterSignOutUrl="/" />
@@ -91,7 +106,7 @@ export default function CitizenLayout({ children }: { children: React.ReactNode 
             {/* ── Mobile Drawer ── */}
             {menuOpen && (
                 <div style={{
-                    position: "fixed", inset: 0, zIndex: 49,
+                    position: "fixed", inset: 0, zIndex: 1200,
                 }}>
                     {/* Backdrop */}
                     <div onClick={() => setMenuOpen(false)} style={{
@@ -105,7 +120,7 @@ export default function CitizenLayout({ children }: { children: React.ReactNode 
                         borderRight: "1px solid #1F2937",
                         display: "flex", flexDirection: "column",
                         padding: "70px 12px 24px",
-                        zIndex: 50,
+                        zIndex: 1201,
                     }}>
                         <nav style={{ display: "flex", flexDirection: "column", gap: 4 }}>
                             {navItems.map((item) => {

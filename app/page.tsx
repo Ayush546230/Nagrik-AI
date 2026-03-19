@@ -23,12 +23,13 @@ export default function LandingPage() {
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <div style={{
             width: 36, height: 36,
-            background: "linear-gradient(135deg, #06B6D4, #0891B2)",
             borderRadius: 8,
-            display: "flex", alignItems: "center", justifyContent: "center",
-            fontSize: 18,
+            overflow: "hidden",
             boxShadow: "0 0 20px rgba(6,182,212,0.3)",
-          }}>🏙️</div>
+            flexShrink: 0,
+          }}>
+            <img src="/logo.png" alt="Nagrik AI Logo" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          </div>
           <span style={{ fontFamily: "Syne, sans-serif", fontWeight: 800, fontSize: 20 }}>
             Nagrik<span style={{ color: "#06B6D4" }}> AI</span>
           </span>
@@ -85,70 +86,7 @@ export default function LandingPage() {
           pointerEvents: "none", zIndex: 0,
         }} />
 
-        {/* Floating incident cards */}
-        <div style={{
-          position: "absolute", left: "4%", top: "20%", zIndex: 1,
-          background: "#111827", border: "1px solid #1F2937",
-          borderRadius: 12, padding: "12px 16px",
-          display: "flex", alignItems: "center", gap: 10,
-          boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
-          animation: "floatCard1 4s ease-in-out infinite",
-          maxWidth: 200,
-        }}>
-          <div style={{ fontSize: 24 }}>🚧</div>
-          <div>
-            <div style={{ fontSize: 12, fontWeight: 600, color: "#F9FAFB" }}>Pothole Reported</div>
-            <div style={{ fontSize: 11, color: "#EF4444" }}>● Critical — 8/10</div>
-          </div>
-        </div>
 
-        <div style={{
-          position: "absolute", right: "4%", top: "28%", zIndex: 1,
-          background: "#111827", border: "1px solid #1F2937",
-          borderRadius: 12, padding: "12px 16px",
-          display: "flex", alignItems: "center", gap: 10,
-          boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
-          animation: "floatCard2 5s ease-in-out infinite",
-          maxWidth: 200,
-        }}>
-          <div style={{ fontSize: 24 }}>✅</div>
-          <div>
-            <div style={{ fontSize: 12, fontWeight: 600, color: "#F9FAFB" }}>Issue Resolved</div>
-            <div style={{ fontSize: 11, color: "#22C55E" }}>● AI Verified</div>
-          </div>
-        </div>
-
-        <div style={{
-          position: "absolute", left: "6%", bottom: "22%", zIndex: 1,
-          background: "#111827", border: "1px solid #1F2937",
-          borderRadius: 12, padding: "12px 16px",
-          display: "flex", alignItems: "center", gap: 10,
-          boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
-          animation: "floatCard3 6s ease-in-out infinite",
-          maxWidth: 200,
-        }}>
-          <div style={{ fontSize: 24 }}>🤖</div>
-          <div>
-            <div style={{ fontSize: 12, fontWeight: 600, color: "#F9FAFB" }}>AI Validated</div>
-            <div style={{ fontSize: 11, color: "#06B6D4" }}>● Confidence 94%</div>
-          </div>
-        </div>
-
-        <div style={{
-          position: "absolute", right: "5%", bottom: "28%", zIndex: 1,
-          background: "#111827", border: "1px solid #1F2937",
-          borderRadius: 12, padding: "12px 16px",
-          display: "flex", alignItems: "center", gap: 10,
-          boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
-          animation: "floatCard2 4.5s ease-in-out infinite",
-          maxWidth: 200,
-        }}>
-          <div style={{ fontSize: 24 }}>👷</div>
-          <div>
-            <div style={{ fontSize: 12, fontWeight: 600, color: "#F9FAFB" }}>Worker Assigned</div>
-            <div style={{ fontSize: 11, color: "#F59E0B" }}>● In Progress</div>
-          </div>
-        </div>
 
         {/* Main Content */}
         <div style={{ position: "relative", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "center", gap: 24 }}>
@@ -196,12 +134,13 @@ export default function LandingPage() {
 
           {/* Stats */}
           <div style={{
-            display: "flex", gap: 40, marginTop: 16,
+            display: "flex", gap: 24, marginTop: 16,
             padding: "20px 40px",
             background: "rgba(17,24,39,0.8)",
             border: "1px solid #1F2937",
             borderRadius: 16,
             backdropFilter: "blur(10px)",
+            flexWrap: "wrap", justifyContent: "center",
           }}>
             {[
               { value: "94%", label: "AI Accuracy" },
@@ -225,6 +164,7 @@ export default function LandingPage() {
             marginTop: 40,
             paddingTop: 40,
             borderTop: "1px solid #1F2937",
+            flexWrap: "wrap", justifyContent: "center",
           }}>
             {[
               { icon: "🤖", title: "AI Validation", desc: "Gemini 2.5 Flash validates every photo", color: "#06B6D4" },
@@ -262,27 +202,10 @@ export default function LandingPage() {
       <Footer />
 
       <style>{`
-        @keyframes floatCard1 {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-12px); }
-        }
-        @keyframes floatCard2 {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-8px); }
-        }
-        @keyframes floatCard3 {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-16px); }
-        }
-
         @media (max-width: 768px) {
           nav { padding: 16px 20px !important; }
           h1 { font-size: 38px !important; }
           section { padding: 60px 16px !important; }
-          section > div:nth-child(4),
-          section > div:nth-child(5),
-          section > div:nth-child(6),
-          section > div:nth-child(7) { display: none !important; }
         }
       `}</style>
     </main>
