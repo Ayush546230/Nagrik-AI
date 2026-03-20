@@ -5,59 +5,21 @@
 
 Nagrik AI is a state-of-the- art platform designed to bridge the gap between citizens and city authorities. Using **Gemini 2.5 Flash AI** and **Redis Geohashing**, it automates the validation, deduplication, and verification of civic issues like potholes, garbage, and broken streetlights.
 
-## 📸 Platform Overview
-
-### 🏡 Beautiful Landing Page (Official Logo & Branding)
-![Landing](public/screenshots/landing.png)
-
-### 📊 Citizen Dashboard & Activity Monitoring
-![Citizen Dashboard](public/screenshots/citizen_dashboard.png)
-
-### 📝 AI-Powered Reporting Form (Category & Photo)
-![Report Form](public/screenshots/report_form.png)
-
-### 📋 User's Reported Incidents
-![My Reports](public/screenshots/my_reports.png)
-
-### 🛡️ Admin Dashboard (Live Severity Heatmap)
-![Admin Dashboard](public/screenshots/admin_dashboard.png)
-
-### 🚨 Real-time Incident Monitoring (Admin View)
-![Admin Incidents](public/screenshots/admin_incidents.png)
-
-### 🛠️ AI-Driven Dual Verification (Before/After Analysis)
-![AI Verification](public/screenshots/incident_details_1.png)
-
-### 🗺️ Precise Geographic Location Mapping
-![Location Mapping](public/screenshots/incident_details_2.png)
-
-### 👷 Worker Management & Performance Overview
-![Worker Management](public/screenshots/admin_workers.png)
-
-### 📈 Smart City Analytics & Resolution Rates
-![Analytics](public/screenshots/admin_analytics.png)
-
-### 📋 Worker Task List & Resolution Flow
-![Worker Dashboard](public/screenshots/worker_dashboard.png)
-![Worker Tasks](public/screenshots/worker_tasks.png)
-
----
-
-## 🛑 Problem Statement
+## Problem Statement
 Civic issue reporting in modern cities is often broken:
 - **Spam & False Reports:** Authorities are overwhelmed by low-quality or fake reports.
 - **Deduplication:** Multiple people report the same pothole, creating redundant data.
 - **Lack of Verification:** No automated way to proof that a worker actually fixed the issue correctly.
 - **Slow Response:** Manual sorting of reports delays resolution of critical hazards.
 
-## ✨ Key Functionalities
+## Key Functionalities
 - **AI-Powered Validation:** Uses Gemini AI to analyze photos in real-time, detecting spam, categorizing issues, and assigning severity scores (1-10).
 - **Smart Deduplication:** Implements **Redis Geohashing** (precision ~20m) to check if an issue in the same category has already been reported nearby.
 - **Dual Verification:** Workers must submit an "After" photo, which the AI compares against the "Before" photo to verify the fix.
 - **Real-time Heatmaps:** Admin dashboard features a live Map with severity-coded markers for city-wide monitoring.
 - **4-Tier Role System:** Dedicated dashboards and flows for `Citizen`, `Worker`, `Admin`, and `Pending Worker`.
 
-## 🛠️ Tech Stack
+## Tech Stack
 - **Framework:** Next.js 14 (App Router)
 - **Language:** TypeScript (Strict Mode)
 - **Authentication:** Clerk Auth
@@ -68,7 +30,7 @@ Civic issue reporting in modern cities is often broken:
 - **Map Engine:** Leaflet & React-Leaflet
 - **Styling:** Vanilla CSS & Tailwind (Hybrid)
 
-## 🛡️ Security Measures
+## Security Measures
 - **Role-Based Access Control (RBAC):** Middleware and Database-level enforcement of roles.
 - **S3 Presigned URLs:** Secure, time-limited direct-to-S3 uploads (no image data passes through the server).
 - **Spam Filtering:** Automated binary spam check + confidence scoring by AI before saving to DB.
@@ -76,7 +38,45 @@ Civic issue reporting in modern cities is often broken:
 - **Webhook Security:** Webhook signature verification using **Svix** for Clerk events.
 - **Environmental Security:** Zero exposure of secret keys to the client-side.
 
-## 📂 Detailed Project Structure
+---
+
+## Platform Overview
+
+### Beautiful Landing Page (Official Logo & Branding)
+![Landing](public/screenshots/landing.png)
+
+### Citizen Dashboard & Activity Monitoring
+![Citizen Dashboard](public/screenshots/citizen_dashboard.png)
+
+### AI-Powered Reporting Form (Category & Photo)
+![Report Form](public/screenshots/report_form.png)
+
+### User's Reported Incidents
+![My Reports](public/screenshots/my_reports.png)
+
+### Admin Dashboard (Live Severity Heatmap)
+![Admin Dashboard](public/screenshots/admin_dashboard.png)
+
+### Real-time Incident Monitoring (Admin View)
+![Admin Incidents](public/screenshots/admin_incidents.png)
+
+### AI-Driven Dual Verification (Before/After Analysis)
+![AI Verification](public/screenshots/incident_details_1.png)
+
+### Precise Geographic Location Mapping
+![Location Mapping](public/screenshots/incident_details_2.png)
+
+### Worker Management & Performance Overview
+![Worker Management](public/screenshots/admin_workers.png)
+
+### Smart City Analytics & Resolution Rates
+![Analytics](public/screenshots/admin_analytics.png)
+
+### Worker Task List & Resolution Flow
+![Worker Dashboard](public/screenshots/worker_dashboard.png)
+![Worker Tasks](public/screenshots/worker_tasks.png)
+
+## Detailed Project Structure
 ```text
 ├── app/                      # Next.js App Router (Main logic)
 │   ├── (auth)/               # Auth flows (Sign-in, Sign-up)
@@ -117,7 +117,7 @@ Civic issue reporting in modern cities is often broken:
 └── tailwind.config.ts        # Design tokens & color system
 ```
 
-## ⚙️ How to Get Started
+## How to Get Started
 
 ### 1. Prerequisites
 - Node.js 18+
@@ -150,5 +150,5 @@ npm run dev
 ```
 
 ---
-*Built with ❤️ for a smarter, cleaner city.*
+*Built with love for a smarter, cleaner city.*
 
