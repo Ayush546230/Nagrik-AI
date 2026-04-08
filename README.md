@@ -1,5 +1,7 @@
+Deployed on Vercel: https://nagrik-ai-nine.vercel.app/
+
 <div align="center">
-  <h1><img src="public/logo.png" width="50" height="50" alt="Nagrik AI Logo" style="vertical-align: middle;" /> Nagrik AI (UrbanEye)</h1>
+  <h1> Nagrik AI (UrbanEye)</h1>
   <p><b>Smart City Infrastructure Auditor & AI-Powered Reporting Platform</b></p>
 </div>
 
@@ -40,25 +42,11 @@ Civic issue reporting in modern cities is often broken:
 
 ---
 
-## Platform Overview
-
-### Beautiful Landing Page (Official Logo & Branding)
-![Landing](public/screenshots/landing.png)
-
-### Citizen Dashboard & Activity Monitoring
-![Citizen Dashboard](public/screenshots/citizen_dashboard.png)
-
-### AI-Powered Reporting Form (Category & Photo)
-![Report Form](public/screenshots/report_form.png)
-
-### User's Reported Incidents
-![My Reports](public/screenshots/my_reports.png)
+## Some imp specs
 
 ### Admin Dashboard (Live Severity Heatmap)
 ![Admin Dashboard](public/screenshots/admin_dashboard.png)
 
-### Real-time Incident Monitoring (Admin View)
-![Admin Incidents](public/screenshots/admin_incidents.png)
 
 ### AI-Driven Dual Verification (Before/After Analysis)
 ![AI Verification](public/screenshots/incident_details_1.png)
@@ -66,15 +54,6 @@ Civic issue reporting in modern cities is often broken:
 ### Precise Geographic Location Mapping
 ![Location Mapping](public/screenshots/incident_details_2.png)
 
-### Worker Management & Performance Overview
-![Worker Management](public/screenshots/admin_workers.png)
-
-### Smart City Analytics & Resolution Rates
-![Analytics](public/screenshots/admin_analytics.png)
-
-### Worker Task List & Resolution Flow
-![Worker Dashboard](public/screenshots/worker_dashboard.png)
-![Worker Tasks](public/screenshots/worker_tasks.png)
 
 ## Detailed Project Structure
 ```text
