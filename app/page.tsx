@@ -54,54 +54,40 @@ export default function LandingPage() {
       </div>
       </nav>
 
-      <section style={{
-        position: "relative",
-        padding: "80px 24px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}>
-        <div style={{ position: "absolute", inset: 0, background: "#FBF9F6" }} />
-
+      <section style={{ position: "relative", padding: 0, display: "block" }}>
+        {/* Full-width Gandhiji hero (like river section) */}
         <div className="hero-bg" style={{
-          position: "absolute",
-          inset: 0,
+          width: "100%",
+          height: 480,
           backgroundImage: `url('/gandhiji.png')`,
-          backgroundSize: "contain",
-          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
           backgroundPosition: "center",
-          opacity: 0.36,
-          pointerEvents: "none",
-          height: "100%",
-          zIndex: 1,
+          backgroundRepeat: "no-repeat",
+          opacity: 0.32,
         }} />
 
         <div className="hero-content" style={{
           position: "absolute",
-          right: 24,
-          top: 120,
-          // keep text below navbar
-          width: "40%",
+          right: 40,
+          top: "50%",
+          transform: "translateY(-50%)",
+          width: "38%",
           maxWidth: 520,
           zIndex: 5,
           padding: 12,
           textAlign: "right",
-          background: "transparent",
+          color: "#0F172A",
         }}>
-         
-
-          <div style={{ flex: "1 1 50%", minWidth: 320, textAlign: "right" }}>
-            <h2 style={{ fontFamily: "Syne, sans-serif", fontSize: 36, marginBottom: 8 }}>
-              Our Cities, Our Responsibility
-            </h2>
-            <p style={{ fontSize: 18, color: "#334155", maxWidth: 520, margin: "0 auto 16px" }}>
-              Empower citizens to report civic issues and help authorities act faster. Together we build cleaner,
-              safer neighborhoods — one verified report at a time.
-            </p>
-            <div className="cta-buttons" style={{ display: "flex", justifyContent: "flex-end", gap: 12 }}>
-              <Link href="/sign-up" className="btn btn-primary">Get Started</Link>
-              <a href="#how" className="btn btn-ghost">Learn How</a>
-            </div>
+          <h2 style={{ fontFamily: "Syne, sans-serif", fontSize: 36, marginBottom: 8 }}>
+            Our Cities, Our Responsibility
+          </h2>
+          <p style={{ fontSize: 18, color: "#334155", maxWidth: 520, margin: "0 auto 16px" }}>
+            Empower citizens to report civic issues and help authorities act faster. Together we build cleaner,
+            safer neighborhoods — one verified report at a time.
+          </p>
+          <div className="cta-buttons" style={{ display: "flex", justifyContent: "flex-end", gap: 12 }}>
+            <Link href="/sign-up" className="btn btn-primary">Get Started</Link>
+            <a href="#how" className="btn btn-ghost">Learn How</a>
           </div>
         </div>
       </section>
@@ -251,7 +237,7 @@ export default function LandingPage() {
           h2 { font-size: 28px !important; }
           h3 { font-size: 20px !important; }
           .hero-content { position: absolute !important; right: 16px !important; top: 50% !important; transform: translateY(-50%) !important; width: calc(100% - 32px) !important; max-width: 520px !important; text-align: right !important; padding: 12px !important; }
-          .hero-bg { display: block !important; background-size: contain !important; background-position: center right !important; opacity: 0.22 !important; height: 320px !important; }
+          .hero-bg { display: block !important; background-size: cover !important; background-position: center !important; opacity: 0.32 !important; height: 480px !important; }
           #how > div > div { padding: 0 8px; }
           #how img { height: auto !important; }
           #how { padding-left: 8px; padding-right: 8px; }
