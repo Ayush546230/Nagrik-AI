@@ -53,7 +53,6 @@ export default function LandingPage() {
         </div>
       </nav>
 
-      {/* Hero with faded Gandhiji background */}
       <section style={{
         position: "relative",
         padding: "80px 24px",
