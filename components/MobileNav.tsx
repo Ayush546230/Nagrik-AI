@@ -12,17 +12,20 @@ export default function MobileNav() {
         aria-label="Menu"
         aria-expanded={open}
         onClick={() => setOpen(!open)}
+        className="hamburger-btn"
         style={{
-          background: "#071226",
-          color: "#10B981",
+          background: "transparent",
           border: "none",
-          borderRadius: 8,
-          fontSize: 18,
+          padding: 8,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
           cursor: "pointer",
-          padding: "8px 10px",
         }}
       >
-        {open ? "✕" : "☰"}
+        <span style={{ display: "inline-block", width: 20, height: 2, background: "#071226", marginBottom: 4, borderRadius: 2 }} />
+        <span style={{ display: "inline-block", width: 20, height: 2, background: "#071226", marginBottom: 4, borderRadius: 2 }} />
+        <span style={{ display: "inline-block", width: 20, height: 2, background: "#071226", borderRadius: 2 }} />
       </button>
 
       {/* Overlay + sliding panel with smooth transitions */}

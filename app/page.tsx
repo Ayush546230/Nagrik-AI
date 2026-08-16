@@ -17,7 +17,7 @@ export default function LandingPage() {
         background: "transparent",
         position: "sticky",
         top: 0,
-        zIndex: 60,
+        zIndex: 120,
       }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <div style={{ width: 40, height: 40, borderRadius: 8, overflow: "hidden" }}>
@@ -67,20 +67,21 @@ export default function LandingPage() {
           position: "absolute",
           inset: 0,
           backgroundImage: `url('/gandhiji.png')`,
-          backgroundSize: "auto 100%",
+          backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
-          backgroundPosition: "right center",
-          opacity: 0.32,
+          backgroundPosition: "center",
+          opacity: 0.36,
           pointerEvents: "none",
           height: "100%",
+          zIndex: 1,
         }} />
 
         <div className="hero-content" style={{
           position: "absolute",
           right: 24,
-          top: "50%",
-          transform: "translateY(-50%)",
-          width: "44%",
+          top: 120,
+          // keep text below navbar
+          width: "40%",
           maxWidth: 520,
           zIndex: 5,
           padding: 12,
