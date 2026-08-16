@@ -65,22 +65,27 @@ export default function LandingPage() {
 
         <div className="hero-bg" style={{
           position: "absolute",
-          left: 0, top: 0, bottom: 0, width: "48%",
+          inset: 0,
           backgroundImage: `url('/gandhiji.png')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: 0.28,
+          backgroundSize: "auto 100%",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "right center",
+          opacity: 0.32,
           pointerEvents: "none",
+          height: "100%",
         }} />
 
         <div className="hero-content" style={{
-         width: "100%",
-         maxWidth: 1200,
-         display: "flex",
-         gap: 24,
-         alignItems: "center",
-         zIndex: 5,
-         marginLeft: "48%",
+          position: "absolute",
+          right: 24,
+          top: "50%",
+          transform: "translateY(-50%)",
+          width: "44%",
+          maxWidth: 520,
+          zIndex: 5,
+          padding: 12,
+          textAlign: "right",
+          background: "transparent",
         }}>
          
 
@@ -196,7 +201,7 @@ export default function LandingPage() {
 
           <div style={{ display: "flex", gap: 18, marginTop: 18, flexWrap: "wrap" }}>
             <div style={{ flex: "1 1 320px", padding: 16, background: "#FBF9F6", borderRadius: 12 }}>
-                <img src="/civicsense.jpg" alt="Civic Sense" style={{ width: "100%", borderRadius: 8, objectFit: "cover", marginBottom: 10 }} />
+                <img src="/civicsense.png" alt="Civic Sense" style={{ width: "100%", borderRadius: 8, objectFit: "cover", marginBottom: 10 }} />
                 <h4 style={{ marginBottom: 8 }}>Citizen Role</h4>
                 <p style={{ color: "#475569" }}>Report issues, add evidence, and verify fixes to earn community trust scores.</p>
               </div>
@@ -244,8 +249,8 @@ export default function LandingPage() {
           nav { padding: 12px 16px; }
           h2 { font-size: 28px !important; }
           h3 { font-size: 20px !important; }
-          .hero-content { flex-direction: column-reverse !important; align-items: center !important; text-align: center !important; gap: 18px !important; }
-          .hero-bg { display: none !important; }
+          .hero-content { position: absolute !important; right: 16px !important; top: 50% !important; transform: translateY(-50%) !important; width: calc(100% - 32px) !important; max-width: 520px !important; text-align: right !important; padding: 12px !important; }
+          .hero-bg { display: block !important; background-size: contain !important; background-position: center right !important; opacity: 0.22 !important; height: 320px !important; }
           #how > div > div { padding: 0 8px; }
           #how img { height: auto !important; }
           #how { padding-left: 8px; padding-right: 8px; }
