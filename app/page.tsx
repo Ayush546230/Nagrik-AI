@@ -61,7 +61,7 @@ export default function LandingPage() {
           backgroundImage: `url('/gandhiji.png')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          opacity: 0.08,
+          opacity: 0.05,
           pointerEvents: "none",
         }} />
 
@@ -73,9 +73,7 @@ export default function LandingPage() {
           alignItems: "center",
           zIndex: 5,
         }}>
-          <div style={{ flex: "1 1 50%", minWidth: 280 }}>
-            <img src="/globe.svg" alt="Globe" style={{ width: 160, opacity: 0.9 }} />
-          </div>
+         
 
           <div style={{ flex: "1 1 50%", minWidth: 320, textAlign: "right" }}>
             <h2 style={{ fontFamily: "Syne, sans-serif", fontSize: 36, marginBottom: 8 }}>
