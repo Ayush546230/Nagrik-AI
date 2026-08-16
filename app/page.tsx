@@ -82,9 +82,7 @@ export default function LandingPage() {
          zIndex: 5,
          marginLeft: "48%",
         }}>
-          <div style={{ flex: "1 1 50%", minWidth: 280 }}>
-            <img src="/globe.svg" alt="Globe" style={{ width: 160, opacity: 0.9 }} />
-          </div>
+         
 
           <div style={{ flex: "1 1 50%", minWidth: 320, textAlign: "right" }}>
             <h2 style={{ fontFamily: "Syne, sans-serif", fontSize: 36, marginBottom: 8 }}>
