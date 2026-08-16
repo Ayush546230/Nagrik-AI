@@ -44,6 +44,18 @@ Civic issue reporting in modern cities is often broken:
 
 ## Some imp specs
 
+### Main Dashboard
+![Dashboard](public/screenshots/dashboard.png)
+
+### How it works
+![Working](public/screenshots/Howworks.png)
+
+### Civic sense
+![civic sense](public/screenshots/civic.png)
+
+### Cleaning
+![Cleaning River](public/screenshots/clean.png)
+
 ### Admin Dashboard (Live Severity Heatmap)
 ![Admin Dashboard](public/screenshots/admin_dashboard.png)
 
