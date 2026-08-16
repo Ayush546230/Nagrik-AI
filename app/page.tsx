@@ -3,6 +3,7 @@ import { SignedIn, SignedOut } from "@clerk/nextjs";
 import Footer from "@/components/Footer";
 import CivicSenseSection from "@/components/Civicsensesection";
 import FAQSection from "@/components/FAQSection";
+import MobileNav from "@/components/MobileNav";
 
 export default function LandingPage() {
   return (
@@ -27,7 +28,9 @@ export default function LandingPage() {
           </div>
         </div>
 
-        <div className="nav-links" style={{ display: "flex", gap: 18, alignItems: "center" }}>
+        <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
+          {/* Desktop links (hidden on very small screens) */}
+          <div className="nav-links" style={{ display: "flex", gap: 18, alignItems: "center" }}>
           <a href="#home" style={{ textDecoration: "none", color: "#0F172A", fontWeight: 600 }}>Home</a>
           <a href="#why" style={{ textDecoration: "none", color: "#0F172A", fontWeight: 600 }}>Why</a>
           <a href="#how" style={{ textDecoration: "none", color: "#0F172A", fontWeight: 600 }}>How</a>
@@ -42,6 +45,11 @@ export default function LandingPage() {
           <SignedIn>
             <Link href="/dashboard" className="btn btn-primary" style={{ padding: "8px 12px" }}>Dashboard</Link>
           </SignedIn>
+
+          {/* mobile nav */}
+          <div className="mobile-nav-wrapper">
+            <MobileNav />
+          </div>
         </div>
       </nav>
 
@@ -57,21 +65,22 @@ export default function LandingPage() {
 
         <div className="hero-bg" style={{
           position: "absolute",
-          left: 0, top: 0, bottom: 0, width: "55%",
+          left: 0, top: 0, bottom: 0, width: "48%",
           backgroundImage: `url('/gandhiji.png')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          opacity: 0.05,
+          opacity: 0.28,
           pointerEvents: "none",
         }} />
 
         <div className="hero-content" style={{
-          width: "100%",
-          maxWidth: 1200,
-          display: "flex",
-          gap: 24,
-          alignItems: "center",
-          zIndex: 5,
+         width: "100%",
+         maxWidth: 1200,
+         display: "flex",
+         gap: 24,
+         alignItems: "center",
+         zIndex: 5,
+         marginLeft: "48%",
         }}>
          
 
@@ -187,14 +196,16 @@ export default function LandingPage() {
 
           <div style={{ display: "flex", gap: 18, marginTop: 18, flexWrap: "wrap" }}>
             <div style={{ flex: "1 1 320px", padding: 16, background: "#FBF9F6", borderRadius: 12 }}>
-              <h4 style={{ marginBottom: 8 }}>Citizen Role</h4>
-              <p style={{ color: "#475569" }}>Report issues, add evidence, and verify fixes to earn community trust scores.</p>
+                <img src="/civicsense.jpg" alt="Civic Sense" style={{ width: "100%", borderRadius: 8, objectFit: "cover", marginBottom: 10 }} />
+                <h4 style={{ marginBottom: 8 }}>Citizen Role</h4>
+                <p style={{ color: "#475569" }}>Report issues, add evidence, and verify fixes to earn community trust scores.</p>
+              </div>
+              <div style={{ flex: "1 1 320px", padding: 16, background: "#FBF9F6", borderRadius: 12 }}>
+                <img src="/civicschool.jpg" alt="Civic School" style={{ width: "100%", borderRadius: 8, objectFit: "cover", marginBottom: 10 }} />
+                <h4 style={{ marginBottom: 8 }}>Civic School</h4>
+                <p style={{ color: "#475569" }}>Workshops and curricula to teach students civic responsibility and digital reporting tools.</p>
+              </div>
             </div>
-            <div style={{ flex: "1 1 320px", padding: 16, background: "#FBF9F6", borderRadius: 12 }}>
-              <h4 style={{ marginBottom: 8 }}>Civic School</h4>
-              <p style={{ color: "#475569" }}>Workshops and curricula to teach students civic responsibility and digital reporting tools.</p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -211,6 +222,15 @@ export default function LandingPage() {
       <FAQSection />
 
       <Footer />
+
+      <script dangerouslySetInnerHTML={{ __html: `
+        (function(){
+          // Hydrate mobile nav client component dynamically to avoid SSR import issues
+          const mount = document.querySelector('.mobile-nav-wrapper');
+          if (!mount) return;
+          // Load the client bundle
+        })();
+      `}} />
 
       <style>{`
         /* General responsive tweaks */
