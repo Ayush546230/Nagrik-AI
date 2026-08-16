@@ -51,6 +51,7 @@ export default function LandingPage() {
             <MobileNav />
           </div>
         </div>
+      </div>
       </nav>
 
       <section style={{
